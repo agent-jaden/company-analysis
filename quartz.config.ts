@@ -83,6 +83,7 @@ const config: QuartzConfig = {
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
+        excludePatterns: ["수출입통계/HS"],
       }),
       Plugin.Assets(),
       Plugin.Static(),
