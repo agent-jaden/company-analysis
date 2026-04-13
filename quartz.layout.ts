@@ -52,7 +52,9 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => node.isFolder || !node.fullSlug.startsWith("수출입통계/HS"),
+    }),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
@@ -75,7 +77,9 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => node.isFolder || !node.fullSlug.startsWith("수출입통계/HS"),
+    }),
   ],
   right: [],
 }
